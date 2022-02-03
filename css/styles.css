@@ -535,7 +535,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   width: 528px;
   height: 581px;
   border-radius: 4px;
@@ -561,4 +561,5 @@ body {
 }
 .btn-modal-close:hover {
   cursor: pointer;
+  fill: var(--accent-color);
 }
