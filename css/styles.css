@@ -6,6 +6,10 @@
   --second-text-color: #757575;
   --accent-color: #2196f3;
   --soc-link-color: #afb1b8;
+  --hover-overly: rgba(33, 150, 243, 0.9);
+
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration: 250ms;
 }
 
 p,
@@ -427,6 +431,7 @@ body {
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
 }
+
 /* ----GALLERY---- */
 .gallery-list {
   display: flex;
@@ -447,11 +452,38 @@ body {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+.gallery-link-thumb {
+  position: relative;
+  overflow: hidden;
+}
+.gallery-text-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: 63px 24px;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  font-size: 18px;
+  line-height: calc(28 / 18);
+  color: var(--white-color);
+  background-color: var(--hover-overly);
+
+  /* transition-property: transform;
+  transition-timing-function: var(--timing-function);
+  transition-duration: var(--duration); */
+}
+/* .gallery-text-overlay:hover,
+.gallery-text-overlay:focus {
+  transform: translateY(-100%);
+} */
 .gallery-item-content {
   padding: 20px 24px;
   border: 1px solid #eeeeee;
   border-top: none;
 }
+
 .gallery-title {
   font-weight: 700;
   font-size: 18px;
@@ -464,4 +496,48 @@ body {
   font-size: 16px;
   line-height: 1.87;
   color: var(--second-text-color);
+}
+
+/* ----MODAL---- */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 581px;
+  border-radius: 4px;
+  background-color: var(--white-color);
+}
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+.btn-modal-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.btn-modal-close:hover {
+  cursor: pointer;
+}
+.modal-icon {
+  width: 18px;
+  height: 18px;
 }
